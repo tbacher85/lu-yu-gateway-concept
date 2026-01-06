@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lu Yu's Gateway | The Guardian's Path to Authentic Chinese Tea</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --color-tea-dark: #2c4f3c;     --color-tea-medium: #5a7d5a;
+            --color-tea-light: #8ba889;    --color-parchment: #f5f1e6;
+            --color-accent-gold: #c19a6b;  --color-ink: #2a211c;
+            --color-ceramic: #e8e2d9;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--color-ink);
+            background-color: var(--color-parchment);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%235a7d5a' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .chinese-font { font-family: 'Noto Serif SC', serif; font-weight: 700; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(44, 79, 60, 0.95) 0%, rgba(42, 33, 28, 0.97) 100%);
+            color: white; padding: 1.5rem 0; position: relative; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { font-size: 2.2rem; color: var(--color-accent-gold); }
+        .logo-text { font-size: 1.8rem; font-weight: 900; letter-spacing: 1px; }
+        .logo-subtitle { font-size: 0.9rem; font-weight: 300; opacity: 0.8; margin-top: -5px; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: var(--color-ceramic); text-decoration: none; font-weight: 500; transition: color 0.3s; position: relative; }
+        nav a:hover { color: var(--color-accent-gold); }
+        nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--color-accent-gold); transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+        /* Hero */
+        .hero {
+            padding: 6rem 0 4rem;
+            background: linear-gradient(rgba(245, 241, 230, 0.9), rgba(245, 241, 230, 0.7)), url('https://images.unsplash.com/photo-1569538648442-321c3d5c9d3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center; text-align: center; position: relative;
+        }
+        .hero::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; background: linear-gradient(90deg, var(--color-tea-dark), var(--color-accent-gold), var(--color-tea-dark)); }
+        .hero-title { font-size: 3.5rem; margin-bottom: 1rem; color: var(--color-tea-dark); line-height: 1.2; }
+        .hero-subtitle { font-size: 1.4rem; max-width: 700px; margin: 0 auto 2.5rem; color: var(--color-tea-medium); font-weight: 400; }
+        .hero-quote {
+            font-style: italic; max-width: 600px; margin: 2.5rem auto; padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.7); border-left: 4px solid var(--color-accent-gold);
+            border-radius: 4px; font-size: 1.2rem; color: var(--color-ink); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .cta-button {
+            display: inline-block; background: linear-gradient(135deg, var(--color-tea-dark), var(--color-tea-medium));
+            color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600;
+            font-size: 1.1rem; transition: all 0.3s; box-shadow: 0 5px 15px rgba(44, 79, 60, 0.3); border: none; cursor: pointer;
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(44, 79, 60, 0.4); background: linear-gradient(135deg, var(--color-tea-medium), var(--color-tea-dark)); }
+        /* Journey */
+        .journey { padding: 5rem 0; background-color: white; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-tea-dark); position: relative; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background-color: var(--color-accent-gold); margin: 1rem auto 2.5rem; }
+        .section-subtitle { text-align: center; max-width: 700px; margin: 0 auto 3rem; color: var(--color-tea-medium); font-size: 1.2rem; }
+        .journey-steps { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-top: 3rem; }
+        .step { flex: 1; min-width: 300px; background-color: var(--color-parchment); border-radius: 10px; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); border-top: 5px solid var(--color-accent-gold); transition: transform 0.3s; }
+        .step:hover { transform: translateY(-10px); }
+        .step-icon { font-size: 3rem; color: var(--color-tea-dark); margin-bottom: 1.5rem; }
+        .step-title { font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-tea-dark); }
+        /* Dossier */
+        .dossier { padding: 5rem 0; background-color: #f9f7f2; }
+        .dossier-container { display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; margin-top: 3rem; }
+        .dossier-visual { flex: 1; min-width: 300px; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(90, 125, 90, 0.1); }
+        .dossier-content { flex: 1; min-width: 300px; }
+        .dossier-header { background-color: var(--color-tea-dark); color: white; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .dossier-title { font-size: 1.3rem; font-weight: 600; }
+        .dossier-badge { background-color: var(--color-accent-gold); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.9rem; }
+        .dossier-body { padding: 2rem; }
+        .dossier-item { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(90, 125, 90, 0.1); }
+        .dossier-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .dossier-label { font-weight: 600; color: var(--color-tea-dark); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        /* Regions */
+        .regions { padding: 5rem 0; background-color: white; }
+        .regions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .region-card { background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); transition: all 0.3s; border: 1px solid rgba(90, 125, 90, 0.1); }
+        .region-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); }
+        .region-image { height: 200px; background-size: cover; background-position: center; }
+        .region-content { padding: 1.5rem; }
+        .region-title { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--color-tea-dark); }
+        .region-type { color: var(--color-accent-gold); font-weight: 600; font-size: 0.9rem; margin-bottom: 1rem; }
+        /* Waitlist */
+        .waitlist {
+            padding: 5rem 0; background: linear-gradient(135deg, rgba(44, 79, 60, 0.9) 0%, rgba(42, 33, 28, 0.95) 100%);
+            color: white; text-align: center;
+        }
+        .waitlist-title { font-size: 2.5rem; margin-bottom: 1rem; color: white; }
+        .waitlist-subtitle { max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.2rem; opacity: 0.9; }
+        .waitlist-form { max-width: 500px; margin: 0 auto; background-color: rgba(255, 255, 255, 0.1); padding: 2.5rem; border-radius: 10px; backdrop-filter: blur(10px); }
+        .form-group { margin-bottom: 1.5rem; text-align: left; }
+        .form-label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        .form-input, .form-select {
+            width: 100%; padding: 1rem; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.1); color: white; font-family: 'Inter', sans-serif; font-size: 1rem;
+        }
+        .form-input::placeholder { color: rgba(255, 255, 255, 0.6); }
+        .form-select option { background-color: var(--color-tea-dark); color: white; }
+        .submit-button {
+            width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--color-accent-gold), #b38952);
+            color: white; border: none; border-radius: 5px; font-weight: 600; font-size: 1.1rem; cursor: pointer;
+            transition: all 0.3s; margin-top: 1rem;
+        }
+        .submit-button:hover { background: linear-gradient(135deg, #b38952, var(--color-accent-gold)); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(193, 154, 107, 0.4); }
+        /* Footer */
+        footer { background-color: var(--color-ink); color: var(--color-ceramic); padding: 3rem 0 2rem; }
+        .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+        .footer-logo { flex: 1; min-width: 250px; }
+        .footer-links { flex: 1; min-width: 200px; }
+        .footer-title { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--color-accent-gold); }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { color: var(--color-ceramic); text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--color-accent-gold); }
+        .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(232, 226, 217, 0.1); font-size: 0.9rem; opacity: 0.7; }
+        /* Responsive */
+        @media (max-width: 992px) { .hero-title { font-size: 2.8rem; } .journey-steps { justify-content: center; } }
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 1.5rem; }
+            nav ul { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+            .hero-title { font-size: 2.3rem; } .hero-subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; } .dossier-container { flex-direction: column; }
+        }
+        @media (max-width: 576px) {
+            .hero { padding: 4rem 0 3rem; } .hero-title { font-size: 2rem; }
+            .step, .region-card { min-width: 100%; } .waitlist-form { padding: 1.5rem; }
+        }
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .stagger-children > * { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+        .stagger-children.visible > * { opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">🍃</div>
+                <div>
+                    <div class="logo-text chinese-font">Lu Yu's Gateway</div>
+                    <div class="logo-subtitle">The Guardian's Path to Authentic Chinese Tea</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#journey">The Journey</a></li>
+                    <li><a href="#dossier">Tea Dossier</a></li>
+                    <li><a href="#regions">Tea Regions</a></li>
+                    <li><a href="#waitlist">Join Waitlist</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title chinese-font fade-in">The Sage's Path to Authentic Tea</h1>
+            <p class="hero-subtitle fade-in" style="transition-delay: 0.2s">A digital gateway following the wisdom of Lu Yu, connecting Western connoisseurs with China's most exquisite tea gardens through verified provenance and immersive storytelling.</p>
+            <div class="hero-quote fade-in" style="transition-delay: 0.4s">
+                <p>"Tea tempers the spirits and harmonizes the mind, dispels lassitude and relieves fatigue, awakens thought and prevents drowsiness."</p>
+                <p style="text-align: right; margin-top: 0.5rem; font-weight: 600;">- Lu Yu, The Classic of Tea (茶经)</p>
+            </div>
+            <a href="#waitlist" class="cta-button fade-in" style="transition-delay: 0.6s">Begin Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey">
+        <div class="container">
+            <h2 class="section-title chinese-font">The Guardian's Path</h2>
+            <p class="section-subtitle">Following Lu Yu's principles, we guide you through a curated journey to tea mastery</p>
+            <div class="journey-steps stagger-children">
+                <div class="step">
+                    <div class="step-icon">🌿</div>
+                    <h3 class="step-title chinese-font">Discover</h3>
+                    <p>Access our curated selection of tea gardens, each personally visited and validated by our tea masters.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">📜</div>
+                    <h3 class="step-title chinese-font">Verify</h3>
+                    <p>Examine the complete digital dossier for each tea batch—from soil composition to artisan interviews.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">🤝</div>
+                    <h3 class="step-title chinese-font">Connect</h3>
+                    <p>Establish direct relationships with tea masters, facilitated by our cultural and linguistic bridge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tea Dossier Section -->
+    <section id="dossier" class="dossier">
+        <div class="container">
+            <h2 class="section-title chinese-font">The Tea Dossier</h2>
+            <p class="section-subtitle">Our unique digital passport for every tea batch—transparency you can taste</p>
+            <div class="dossier-container">
+                <div class="dossier-visual fade-in">
+                    <div class="dossier-header">
+                        <div class="dossier-title">Phoenix Mountain Dan Cong Oolong</div>
+                        <div class="dossier-badge">Lu Yu Verified</div>
+                    </div>
+                    <div class="dossier-body">
+                        <div class="dossier-item">
+                            <div class="dossier-label"><i class="fas fa-mountain"></i> Origin</div>
+                            <p>Fenghuang Mountain, Guangdong. Single bushes aged 80+ years.</p>
+                        </div>
+                        <div class="dossier-item">
+                            <div class="dossier-label"><i class="fas fa-user"></i> Tea Master</div>
+                            <p>Chen Wei, 3rd generation tea maker. Specializes in charcoal roasting.</p>
+                        </div>
+                        <div class="dossier-item">
+                            <div class="dossier-label"><i class="fas fa-leaf"></i> Harvest</div>
+                            <p>Spring 2024, hand-picked during early morning hours.</p>
+                        </div>
+                        <div class="dossier-item">
+                            <div class="dossier-label"><i class="fas fa-award"></i> Quality Metrics</div>
+                            <p>Laboratory tested for purity. Tasting notes: orchid fragrance, honey undertones, lasting finish.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dossier-content fade-in" style="transition-delay: 0.3s">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--color-tea-dark);">Beyond Certification</h3>
+                    <p style="margin-bottom: 1.5rem;">While others offer basic supplier listings, we provide what Western buyers truly need: <strong>context and confidence</strong>.</p>
+                    <p style="margin-bottom: 1.5rem;">Each Tea Dossier includes:</p>
+                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.8rem;">Comprehensive grower interviews and farm narratives</li>
+                        <li style="margin-bottom: 0.8rem;">Micro-terroir analysis and climate impact data</li>
+                        <li style="margin-bottom: 0.8rem;">Traditional processing documentation</li>
+                        <li style="margin-bottom: 0.8rem;">Customizable marketing assets for your brand</li>
+                    </ul>
+                    <p>This isn't just sourcing—it's <strong>storytelling with substantiation</strong>, enabling you to command premium pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regions Section - UPDATED IMAGES -->
+    <section id="regions" class="regions">
+        <div class="container">
+            <h2 class="section-title chinese-font">Curated Tea Regions</h2>
+            <p class="section-subtitle">We focus on authenticity, not abundance. Each region is personally vetted by our team.</p>
+            <div class="regions-grid stagger-children">
+                <!-- Yunnan: Misty mountain tea terraces -->
+                <div class="region-card">
+                    <div class="region-image" style="background-image: url('https://images.unsplash.com/photo-1762882882800-a22d00e31b7a?q=80&w=1633&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="region-content">
+                        <h3 class="region-title chinese-font">Yunnan</h3>
+                        <div class="region-type">Ancient Pu-erh & Black Teas</div>
+                        <p>Home to thousand-year-old tea trees and the birthplace of fermented Pu-erh tea in misty highlands.</p>
+                    </div>
+                </div>
+                <!-- Fujian: Wuyi Mountain rocky tea cliffs -->
+                <div class="region-card">
+                    <div class="region-image" style="background-image: url('https://images.unsplash.com/photo-1558263053-b99931790df7?q=80&w=1632&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="region-content">
+                        <h3 class="region-title chinese-font">Fujian</h3>
+                        <div class="region-type">Oolong & White Teas</div>
+                        <p>The origin of Tieguanyin and Da Hong Pao oolongs from the mineral-rich cliffs of Wuyi Mountain.</p>
+                    </div>
+                </div>
+                <!-- Zhejiang: Terraced tea fields near Hangzhou [citation:1] -->
+                <div class="region-card">
+                    <div class="region-image" style="background-image: url('https://images.unsplash.com/photo-1701180730759-fbe262531da8?q=80&w=1470&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="region-content">
+                        <h3 class="region-title chinese-font">Zhejiang</h3>
+                        <div class="region-type">Green Teas</div>
+                        <p>Famous for Longjing (Dragon Well) tea, with meticulous hand-processing on terraced hillsides[citation:1].</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="waitlist">
+        <div class="container">
+            <h2 class="waitlist-title chinese-font">Join The Guardian's Path</h2>
+            <p class="waitlist-subtitle">Be among the first Western businesses to access our curated network of verified Chinese tea gardens. Complete transparency. Direct relationships. Exceptional quality.</p>
+            <div class="waitlist-form fade-in">
+                <!-- REPLACE FORM_ID WITH YOUR FORMSPREE FORM ID -->
+                <form action="https://formspree.io/f/xbdlveeq" method="POST" id="tea-waitlist-form">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Business Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="you@yourbusiness.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="company">Company Name</label>
+                        <input type="text" id="company" name="company" class="form-input" placeholder="Your tea business" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="business-type">Primary Business</label>
+                        <select id="business-type" name="business-type" class="form-select" required>
+                            <option value="" disabled selected>Select your business type</option>
+                            <option value="specialty-retailer">Specialty Tea Retailer</option>
+                            <option value="wholesaler">Wholesaler/Distributor</option>
+                            <option value="cafe-restaurant">Cafe/Restaurant</option>
+                            <option value="wellness-brand">Wellness Brand</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="challenge">Biggest Sourcing Challenge</label>
+                        <textarea id="challenge" name="challenge" class="form-input" placeholder="What's your main difficulty when sourcing premium Chinese tea?" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Join The Guardian's Path</button>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">By joining, you agree to receive updates about Lu Yu's Gateway. We respect your privacy and will never share your information.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <div class="logo" style="justify-content: flex-start;">
+                        <div class="logo-icon">🍃</div>
+                        <div>
+                            <div class="logo-text chinese-font">Lu Yu's Gateway</div>
+                            <div class="logo-subtitle">The Guardian's Path to Authentic Chinese Tea</div>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem; max-width: 300px;">Bridging centuries of tea tradition with modern commerce through verification, storytelling, and direct connection.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title chinese-font">The Path</h4>
+                    <ul>
+                        <li><a href="#journey">Discover</a></li>
+                        <li><a href="#dossier">Verify</a></li>
+                        <li><a href="#regions">Explore</a></li>
+                        <li><a href="#waitlist">Connect</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title chinese-font">Our Team</h4>
+                    <ul>
+                        <li><a href="#">Guardians in Shanghai</a></li>
+                        <li><a href="#">Cultural Bridges</a></li>
+                        <li><a href="#">Tea Masters Network</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Lu Yu's Gateway. Honoring the spirit of the <em>Classic of Tea</em> in the digital age.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+                document.querySelectorAll('.stagger-children').forEach(el => el.classList.add('visible'));
+            }, 300);
+            // Scroll animations
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+            document.querySelectorAll('.fade-in, .stagger-children').forEach(el => observer.observe(el));
+            // Form submission handling
+            const form = document.getElementById('tea-waitlist-form');
+            if (form) form.addEventListener('submit', function(e) {
+                setTimeout(() => {
+                    const submitButton = form.querySelector('.submit-button');
+                    const originalText = submitButton.textContent;
+                    submitButton.textContent = 'Journey Begun!';
+                    submitButton.style.background = 'linear-gradient(135deg, #5a7d5a, #2c4f3c)';
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.style.background = 'linear-gradient(135deg, var(--color-accent-gold), #b38952)';
+                    }, 3000);
+                }, 500);
+            });
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.getElementById(href.substring(1));
+                        if (targetElement) window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
